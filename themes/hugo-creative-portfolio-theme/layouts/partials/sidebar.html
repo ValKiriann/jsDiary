@@ -1,0 +1,24 @@
+<div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    {{ range .Site.Params.sidebarAbout }}
+      <p class="sidebar-p">{{ . | safeHTML }} Este blog recoge mi viaje por el <a href=http://www.fictizia.com/formacion/master-javascript-nodejs>máster de programación de aplicaciones con JavaScript y Node.js</a>. Aquí colocaré en forma de diario mi aprendizaje, mis ejercicios y mis mejores trabajos como un portfolio</p>
+    {{ end }}
+    <ul class="sidebar-menu">
+      {{ $url := .Site.BaseURL }}
+      {{ range .Site.Params.navlinks }}
+        <li><a href="{{ $url }}{{ .url }}">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+    {{ partial "social_buttons_in_sidebar.html" . }}
+
+    <div class="copyright">
+      <p class="credit">
+        {{ with .Site.Params.copyright }}
+          {{ . | safeHTML }}
+        {{ end }}
+        {{ partial "attribution.html" . }}
+      </p>
+    </div>
+  </div>
+</div>
