@@ -1,4 +1,4 @@
-baseurl = "valkiriann.github.io/jsDiary/"
+baseURL = "/jsDiary/"
 title = "My trip to magic"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
